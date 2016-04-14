@@ -29,8 +29,9 @@ public class ShowUsers extends HttpServlet {
             Integer id = Integer.valueOf(strId);
             try {
                 User myUser = user.selectByID(id);
-                request.setAttribute("user", myUser);
+                request.setAttribute(ATTRIBUTE_MODEL_TO_SHOW, myUser);
                 request.getRequestDispatcher(PAGE_OK).forward(request,response);
+                return;
             } catch (NoSuchUserException e) {
               /*NOP*/
             }

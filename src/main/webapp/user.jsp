@@ -12,12 +12,11 @@
 </head>
 <body>
 <br/>
-<br/> User ID: ${param.id}
-${}
+<br/> User ID: ${user.id}
 <br/>
-<br/> User Name ${param.firstName};
+<br/> User Name ${user.firstName}
 <br/>
-<br/> User Password ${param.password}
+<br/> User Password ${user.password}
 <br/>
 </body>
 </html>
