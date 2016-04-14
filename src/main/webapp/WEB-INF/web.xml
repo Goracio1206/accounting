@@ -1,0 +1,26 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <!--  FILTERS  -->
+    <filter>
+        <filter-name>RequestFilter</filter-name>
+        <filter-class>net.accounting.filters.RequestFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>RequestFilter</filter-name>
+        <url-pattern>*.com</url-pattern>
+    </filter-mapping>
+
+
+    <!--  SERVLETS  -->
+    <servlet>
+        <servlet-name>User</servlet-name>
+        <servlet-class>net.accounting.controller.ShowUsers</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>User</servlet-name>
+        <url-pattern>/user.com</url-pattern>
+    </servlet-mapping>
+</web-app>
