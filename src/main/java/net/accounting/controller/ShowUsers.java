@@ -1,6 +1,7 @@
 package net.accounting.controller;
 
 import net.accounting.Users.User;
+import net.accounting.dao.Exceptions.DaoSystemExceptions;
 import net.accounting.dao.Exceptions.NoSuchUserException;
 import net.accounting.dao.UserDao;
 import net.accounting.dao.impl.SearchUserDao;
@@ -24,17 +25,22 @@ public class ShowUsers extends HttpServlet {
 
     private UserDao user = new SearchUserDao();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, NumberFormatException {
         String strId = request.getParameter(USER_ID);
         if (strId != null) {
             try {
                 Integer id = Integer.valueOf(strId);
-                User myUser = user.selectByID(id);
-                request.setAttribute(ATTRIBUTE_MODEL_TO_SHOW, myUser);
+                User model = user.selectByID(id);
+                System.out.println(model.toString());
+                request.setAttribute(ATTRIBUTE_MODEL_TO_SHOW, model);
                 // OK
                 request.getRequestDispatcher(PAGE_OK).forward(request,response);
                 return;
             } catch (NoSuchUserException e) {
+              /*NOP*/
+            } catch (DaoSystemExceptions e) {
+              /*NOP*/
+            } catch (NumberFormatException e) {
               /*NOP*/
             }
 

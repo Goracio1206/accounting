@@ -1,17 +1,10 @@
-<jsp:useBean id="user" scope="request" type="net.accounting.Users.User"/>
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 14-Apr-16
-  Time: 22:07
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title></title>
 </head>
 <body>
+<b>User Information</b>
 <br/>
 <br/> User ID: ${user.id}
 <br/>
@@ -19,5 +12,10 @@
 <br/>
 <br/> User Password: ${user.password}
 <br/>
+<br/> <a href="index.jsp">main page</a>
+<br/>
+<br/>
+<br/>
+<%--<br/>   ${requestScope}--%>
 </body>
 </html>
