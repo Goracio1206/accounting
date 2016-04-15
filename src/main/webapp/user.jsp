@@ -1,3 +1,4 @@
+<jsp:useBean id="user" scope="request" type="net.accounting.Users.User"/>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -14,9 +15,9 @@
 <br/>
 <br/> User ID: ${user.id}
 <br/>
-<br/> User Name ${user.firstName}
+<br/> User Name: ${user.firstName}
 <br/>
-<br/> User Password ${user.password}
+<br/> User Password: ${user.password}
 <br/>
 </body>
 </html>

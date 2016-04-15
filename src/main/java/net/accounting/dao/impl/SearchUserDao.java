@@ -16,7 +16,7 @@ public class SearchUserDao implements UserDao {
     public SearchUserDao() {
         user.put(1, new User(1, "Vitalii", "Passw0rd"));
         user.put(2, new User(2, "Ivan", "Qawsed1234"));
-        user.put(3, new User(1, "Petro", "Qwerty"));
+        user.put(3, new User(3, "Petro", "Qwerty"));
     }
 
     public User selectByID(int id) throws NoSuchUserException {
@@ -24,6 +24,5 @@ public class SearchUserDao implements UserDao {
             throw new NoSuchUserException("User was not found!!!");
         }
         return user.get(id);
-
     }
 }

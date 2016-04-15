@@ -13,7 +13,7 @@ import java.io.IOException;
 public class RequestFilter extends BaseFilter {
 
     @Override
-    public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) {
+    public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException{
         String protocol = request.getProtocol();
         String method = request.getMethod();
         String queryString = request.getQueryString();
@@ -24,5 +24,7 @@ public class RequestFilter extends BaseFilter {
                 + "QueryString: " + queryString + "\n"
                 + "IP: " + ip + "\n"
                 + "The end of request  <<<<<<");
+
+        chain.doFilter(request, response);
     }
 }
