@@ -14,14 +14,8 @@
         <filter-name>RequestFilter</filter-name>
         <url-pattern>*.com</url-pattern>
     </filter-mapping>
-
-    <jsp-config>
-        <jsp-property-group>
-            <url-pattern>*.jsp</url-pattern>
-            <el-ignored>false</el-ignored>
-        </jsp-property-group>
-    </jsp-config>
-
+    <!--  **********************************************************************************************  -->
+    
     <!--  SERVLETS  -->
     <servlet>
         <servlet-name>User</servlet-name>
@@ -31,4 +25,24 @@
         <servlet-name>User</servlet-name>
         <url-pattern>/user.com</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>net.accounting.controller.Login</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/index.com</url-pattern>
+    </servlet-mapping>
+    <!--  **********************************************************************************************  -->
+    
+    <!--  JSP CONFIGURATION  -->
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <el-ignored>false</el-ignored>
+        </jsp-property-group>
+    </jsp-config>
+    <!--  **********************************************************************************************  -->
+    
 </web-app>
