@@ -1,6 +1,10 @@
 package net.accounting.controller;
 
 import net.accounting.Users.User;
+import net.accounting.dao.Exceptions.DaoSystemExceptions;
+import net.accounting.dao.Exceptions.NoSuchUserException;
+import net.accounting.dao.UserDao;
+import net.accounting.dao.impl.SearchUserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,21 +22,27 @@ public class Login extends HttpServlet {
     public static final String PAGE_FOR_USER = "WEB-INF/jsp/user.jsp";
     public static final String PAGE_ERROR = "WEB-INF/jsp/error.jsp";
 
+    UserDao aUser = new SearchUserDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userName = request.getParameter(USER_NAME);
         String userPassword = request.getParameter(USER_PASSWORD);
         if (userName != null & userPassword != null) {
             try{
-                User user = new User(userName, userPassword);
+
+                User user = aUser.selectUser(userName, userPassword);
+                if (user != null) {
                 request.setAttribute(ATTRIBUTE_USER_TO_VIEW, user);
                 request.getRequestDispatcher(PAGE_FOR_USER).forward(request, response);
                 return;
-            } catch (Exception e){
+                } else {
+                    request.getRequestDispatcher(PAGE_ERROR).forward(request, response);
+                }
+            } catch (DaoSystemExceptions| NoSuchUserException ignore) {
                 /*NOP*/
             }
         }
-        response.sendRedirect(PAGE_ERROR);
+
     }
 
 }

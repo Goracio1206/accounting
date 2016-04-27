@@ -3,7 +3,6 @@ package net.accounting.controller;
 import com.sun.org.apache.bcel.internal.classfile.FieldOrMethod;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

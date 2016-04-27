@@ -16,8 +16,5 @@
     <br/>
     <a href="./registration.jsp"> Registration</a>
 </form>
-
-
-
 </body>
 </html>

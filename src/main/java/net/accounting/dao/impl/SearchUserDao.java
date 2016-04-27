@@ -6,8 +6,7 @@ import net.accounting.dao.Exceptions.NoSuchUserException;
 import net.accounting.dao.Exceptions.UserAlreadyExistException;
 import net.accounting.dao.UserDao;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -22,6 +21,7 @@ public class SearchUserDao implements UserDao {
         this.user.put(3, new User("Petro", "Qwerty"));
     }
 
+    @Override
     public User selectByID(int id) throws NoSuchUserException, DaoSystemExceptions {
         if(!user.containsKey(id)){
             throw new NoSuchUserException("User was not found!!!");
@@ -29,6 +29,27 @@ public class SearchUserDao implements UserDao {
         return user.get(id);
     }
 
+    @Override
+    public List<User> selectAllUsers() throws NoSuchUserException, DaoSystemExceptions {
+        List<User> allUsers = new ArrayList<>(user.values());
+        return allUsers;
+    }
+
+    @Override
+    public User selectUser(String login, String password) throws NoSuchUserException, DaoSystemExceptions {
+        User aUser;
+        Iterator iterator = user.entrySet().iterator();
+        while (iterator.hasNext()){
+            Map.Entry pair = (Map.Entry) iterator.next();
+            aUser = (User) pair.getValue();
+            if(aUser.getFirstName().equals(login) & aUser.getPassword().equals(password)) {
+                return aUser;
+            }
+        }
+        return null;
+    }
+
+    @Override
     public void createNewUser(int id, String firstName, String password) throws DaoSystemExceptions, UserAlreadyExistException {
         this.user.put(id, new User(firstName, password));
     }
