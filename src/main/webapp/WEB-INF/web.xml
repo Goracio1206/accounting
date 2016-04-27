@@ -4,6 +4,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
+    
+    <!--<welcome-file-list>-->
+        <!--<welcome-file>index.com</welcome-file>-->
+    <!--</welcome-file-list>-->
 
   <!--  FILTERS  -->
     <filter>
@@ -27,12 +31,42 @@
     </servlet-mapping>
     
     <servlet>
+        <servlet-name>Registration</servlet-name>
+        <servlet-class>net.accounting.controller.RegistrationController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Registration</servlet-name>
+        <url-pattern>/register.com</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>net.accounting.controller.Login</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/index.com</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!--  Cookie test  -->
+    <servlet>
+        <servlet-name>Visits</servlet-name>
+        <servlet-class>net.accounting.controller.CookieTest</servlet-class>
+    </servlet><servlet-mapping>
+    <servlet-name>Visits</servlet-name>
+    <url-pattern>/visitcookie.com</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!--  Session test  -->
+    <servlet>
+        <servlet-name>Session</servlet-name>
+        <servlet-class>net.accounting.controller.SessionDemo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Session</servlet-name>
+        <url-pattern>/sessiondemo.com</url-pattern>
     </servlet-mapping>
     <!--  **********************************************************************************************  -->
     
@@ -44,5 +78,10 @@
         </jsp-property-group>
     </jsp-config>
     <!--  **********************************************************************************************  -->
-    
+
+
+    <session-config>
+        <session-timeout>60</session-timeout>
+    </session-config>
+
 </web-app>
