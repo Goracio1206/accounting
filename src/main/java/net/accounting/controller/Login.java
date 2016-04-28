@@ -7,15 +7,14 @@ import net.accounting.dao.UserDao;
 import net.accounting.dao.impl.SearchUserDao;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 /**
  * Created by vitalii.nedzelskyi on 18.04.2016.
  */
 public class Login extends HttpServlet {
+    public static final String USER_LOGGED = "logged";
     public static final String USER_NAME = "name";
     public static final String USER_PASSWORD = "password";
     public static final String ATTRIBUTE_USER_TO_VIEW = "user";
@@ -27,6 +26,14 @@ public class Login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userName = request.getParameter(USER_NAME);
         String userPassword = request.getParameter(USER_PASSWORD);
+
+        HttpSession session = request.getSession();
+        String test = (String) session.getAttribute(USER_LOGGED);
+        session.setAttribute(USER_LOGGED, test);
+
+        Cookie cookies = new Cookie("test", "test");
+        response.addCookie(cookies);
+
         if (userName != null & userPassword != null) {
             try{
 
