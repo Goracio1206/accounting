@@ -18,7 +18,6 @@ import java.io.IOException;
  */
 public class ShowUsers extends HttpServlet {
     public static final String USER_ID = "id";
-   // public static final String USER_NAME = "Name";
     public static final String ATTRIBUTE_MODEL_TO_SHOW = "user";
     public static final String PAGE_OK = "WEB-INF/jsp/user.jsp";
     public static final String PAGE_ERROR = "WEB-INF/jsp/error.jsp";

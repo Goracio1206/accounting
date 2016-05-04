@@ -15,7 +15,7 @@ import java.io.IOException;
  */
 public class Login extends HttpServlet {
     public static final String USER_LOGGED = "logged";
-    public static final String USER_NAME = "name";
+    public static final String USER_EMAIL = "email";
     public static final String USER_PASSWORD = "password";
     public static final String ATTRIBUTE_USER_TO_VIEW = "user";
     public static final String PAGE_FOR_USER = "WEB-INF/jsp/user.jsp";
@@ -24,7 +24,7 @@ public class Login extends HttpServlet {
     UserDao aUser = new SearchUserDao();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String userName = request.getParameter(USER_NAME);
+        String userName = request.getParameter(USER_EMAIL);
         String userPassword = request.getParameter(USER_PASSWORD);
 
         HttpSession session = request.getSession();
