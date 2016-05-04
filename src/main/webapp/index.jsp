@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +10,14 @@
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap/main-core/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}css/bootstrap/main-core/dist/css/bootstrap.min.css" rel="stylesheet">
+    <%--<link href="WEB-INF/css/bootstrap/main-core/dist/css/bootstrap.min.css" rel="stylesheet">--%>
     <!-- MetisMenu CSS -->
-    <link href="css/bootstrap/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}css/bootstrap/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}css/sb-admin-2.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="font/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}font/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

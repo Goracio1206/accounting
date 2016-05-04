@@ -1,0 +1,13 @@
+.body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 15px;
+}
+
+.login_container {
+    border: 1px solid black;
+    width: 350px;
+    mxx-width: 350px;
+    height: auto;
+    padding: 10px;
+}
