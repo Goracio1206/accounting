@@ -1,6 +1,6 @@
 package net.accounting.dao.impl;
 
-import net.accounting.Users.User;
+import net.accounting.Entity.Users.User;
 import net.accounting.dao.Exceptions.DaoSystemExceptions;
 import net.accounting.dao.Exceptions.NoSuchUserException;
 import net.accounting.dao.Exceptions.UserAlreadyExistException;
@@ -16,9 +16,9 @@ public class SearchUserDao implements UserDao {
     private Map<Integer, User> user = new ConcurrentHashMap<Integer, User>();
 
     public SearchUserDao() {
-        this.user.put(1, new User("Vitalii", "Passw0rd"));
-        this.user.put(2, new User("Ivan", "Qawsed1234"));
-        this.user.put(3, new User("Petro", "Qwerty"));
+        this.user.put(1, new User("vitalii.nedzelskyi@test.com", "Passw0rd"));
+        this.user.put(2, new User("Ivan@test.com", "Qawsed1234"));
+        this.user.put(3, new User("Petro@test.com", "Qwerty"));
     }
 
     @Override

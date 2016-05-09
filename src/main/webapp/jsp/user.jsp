@@ -12,7 +12,7 @@
 <br/>
 <br/> User Password: ${user.password}
 <br/>
-<br/> <a href="../../index.jsp">main page</a>
+<br/> <a href="${pageContext.request.contextPath}/index.jsp">main page</a>
 <br/>
 <br/>
 <br/>

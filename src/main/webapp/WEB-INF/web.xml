@@ -54,7 +54,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
-        <url-pattern>/index.com</url-pattern>
+        <url-pattern>/login.com</url-pattern>
     </servlet-mapping>
     
     

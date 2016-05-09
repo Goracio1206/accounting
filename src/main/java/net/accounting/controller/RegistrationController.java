@@ -1,6 +1,6 @@
 package net.accounting.controller;
 
-import net.accounting.Users.User;
+import net.accounting.Entity.Users.User;
 import net.accounting.dao.Exceptions.DaoSystemExceptions;
 import net.accounting.dao.Exceptions.UserAlreadyExistException;
 import net.accounting.dao.UserDao;

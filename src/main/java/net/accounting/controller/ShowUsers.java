@@ -1,13 +1,12 @@
 package net.accounting.controller;
 
-import net.accounting.Users.User;
+import net.accounting.Entity.Users.User;
 import net.accounting.dao.Exceptions.DaoSystemExceptions;
 import net.accounting.dao.Exceptions.NoSuchUserException;
 import net.accounting.dao.UserDao;
 import net.accounting.dao.impl.SearchUserDao;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

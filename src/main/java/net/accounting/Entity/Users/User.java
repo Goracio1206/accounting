@@ -1,4 +1,4 @@
-package net.accounting.Users;
+package net.accounting.Entity.Users;
 
 /**
  * Created by Admin on 14-Apr-16.

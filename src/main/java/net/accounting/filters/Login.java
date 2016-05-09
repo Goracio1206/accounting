@@ -20,7 +20,7 @@ public class Login extends BaseFilter {
         HttpSession session = request.getSession();
         String loggedIn = (String) session.getAttribute(USER_LOGGED_IN);
         if (loggedIn != null) {
-            if (loggedIn.equals(USER_LOGGED_IN)){
+            if (!loggedIn.equals("true")){
             request.getRequestDispatcher(PAGE_LOGIN).forward(request, response);
             }
         }
