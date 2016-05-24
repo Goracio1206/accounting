@@ -30,6 +30,20 @@ public class SearchUserDao implements UserDao {
     }
 
     @Override
+    public User selectUserByID(int id) throws  NoSuchUserException, DaoSystemExceptions {
+        Iterator iterator = user.entrySet().iterator();
+        User aUser1 = null;
+        while (iterator.hasNext()){
+            Map.Entry pair = (Map.Entry) iterator.next();
+            aUser1 = (User) pair.getValue();
+            if (aUser1.getId() == id) {
+                return aUser1;
+            }
+        }
+        return aUser1;
+    }
+
+    @Override
     public List<User> selectAllUsers() throws NoSuchUserException, DaoSystemExceptions {
         List<User> allUsers = new ArrayList<>(user.values());
         return allUsers;

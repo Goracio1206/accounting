@@ -39,7 +39,7 @@ public class Main extends HttpServlet {
         }
         User aUser = null;
         try {
-            aUser = userDAO.selectByID(Integer.valueOf(1/*userID_cookie.getValue())*/)); // Commented because user id returned incorrect after refresh
+            aUser = userDAO.selectUserByID(Integer.valueOf(userID_cookie.getValue())); // Commented because user id returned incorrect after refresh
         } catch (NoSuchUserException | DaoSystemExceptions e) {
             e.printStackTrace();
         }

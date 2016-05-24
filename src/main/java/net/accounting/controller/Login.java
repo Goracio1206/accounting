@@ -34,7 +34,7 @@ public class Login extends HttpServlet {
         try {
             User user = aUser.selectUser(userEmail, userPassword);
             if(user != null) {
-                Cookie aCookie = new Cookie("user_id","" + user.getId());
+                Cookie aCookie = new Cookie("user_id",String.valueOf(user.getId()));
                 request.getSession().setAttribute("logged", "true");
                 response.addCookie(aCookie);
                 response.sendRedirect("/main.com");

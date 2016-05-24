@@ -11,6 +11,8 @@ import java.util.List;
  * Created by Admin on 14-Apr-16.
  */
 public interface UserDao {
+    User selectUserByID(int id) throws NoSuchUserException, DaoSystemExceptions;
+
     User selectByID(int id) throws NoSuchUserException, DaoSystemExceptions;
 
     List<User> selectAllUsers() throws NoSuchUserException, DaoSystemExceptions;
