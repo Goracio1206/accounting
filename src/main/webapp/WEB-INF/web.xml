@@ -22,7 +22,7 @@
     </filter>
     <filter-mapping>
         <filter-name>LoginCheck</filter-name>
-        <url-pattern>/main.com</url-pattern>
+        <url-pattern>/main.com*</url-pattern>
     </filter-mapping>
     <!--  **********************************************************************************************  -->
     
