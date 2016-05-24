@@ -11,19 +11,14 @@ import java.io.IOException;
  * Created by Admin on 28-Apr-16.
  */
 public class Login extends BaseFilter {
-    public static final String USER_LOGGED_IN = "logged";
-    public static final String PAGE_LOGIN = "index.jsp";
-
 
     @Override
     public void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
-        HttpSession session = request.getSession();
-        String loggedIn = (String) session.getAttribute(USER_LOGGED_IN);
-        if (loggedIn != null) {
-            if (!loggedIn.equals("true")){
-            request.getRequestDispatcher(PAGE_LOGIN).forward(request, response);
-            }
+        HttpSession session = request.getSession(false);
+        if (session != null && !session.isNew()) {
+            chain.doFilter(request, response);
+        } else {
+            response.sendRedirect("/index.jsp");
         }
-        chain.doFilter(request, response);
     }
 }

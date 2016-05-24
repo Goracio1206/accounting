@@ -11,7 +11,6 @@
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
     <!-- Bootstrap Core CSS -->
     <link href="${pageContext.request.contextPath}css/bootstrap/main-core/dist/css/bootstrap.min.css" rel="stylesheet">
-    <%--<link href="WEB-INF/css/bootstrap/main-core/dist/css/bootstrap.min.css" rel="stylesheet">--%>
     <!-- MetisMenu CSS -->
     <link href="${pageContext.request.contextPath}css/bootstrap/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
     <!-- Custom CSS -->
