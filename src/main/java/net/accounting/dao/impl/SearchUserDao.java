@@ -31,13 +31,10 @@ public class SearchUserDao implements UserDao {
 
     @Override
     public User selectUserByID(int id) throws  NoSuchUserException, DaoSystemExceptions {
-        Iterator iterator = user.entrySet().iterator();
         User aUser1 = null;
-        while (iterator.hasNext()){
-            Map.Entry pair = (Map.Entry) iterator.next();
-            aUser1 = (User) pair.getValue();
-            if (aUser1.getId() == id) {
-                return aUser1;
+        for (Map.Entry<Integer, User> entry : user.entrySet()){
+            if (entry.getKey() == id) {
+                aUser1 = entry.getValue();
             }
         }
         return aUser1;
@@ -51,16 +48,14 @@ public class SearchUserDao implements UserDao {
 
     @Override
     public User selectUser(String login, String password) throws NoSuchUserException, DaoSystemExceptions {
-        User aUser;
-        Iterator iterator = user.entrySet().iterator();
-        while (iterator.hasNext()){
-            Map.Entry pair = (Map.Entry) iterator.next();
-            aUser = (User) pair.getValue();
-            if(aUser.getFirstName().equals(login) & aUser.getPassword().equals(password)) {
-                return aUser;
+        User aUser = null;
+        for (Map.Entry<Integer, User> entry : user.entrySet()){
+            if (entry.getValue().getFirstName().toLowerCase().equals(login.toLowerCase()) && entry.getValue().getPassword().equals(password)){
+                aUser = entry.getValue();
+                aUser.setID(entry.getKey());
             }
         }
-        return null;
+        return aUser;
     }
 
     @Override
