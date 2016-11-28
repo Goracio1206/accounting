@@ -13,11 +13,13 @@ public class User {
     public User(String name, String password){
         this.firstName = name;
         this.password = password;
-        this.id = ++id;
     }
 
     public int getId() {
         return id;
+    }
+    public void setID(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
