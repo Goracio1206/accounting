@@ -7,7 +7,6 @@ import net.accounting.dao.UserDao;
 import net.accounting.dao.impl.SearchUserDao;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,7 +32,6 @@ public class Login extends HttpServlet {
                 Cookie aCookie = new Cookie("user_id", String.valueOf(user.getId()));
                 response.addCookie(aCookie);
                 response.sendRedirect("/main.com");
-                //request.getRequestDispatcher("/main.com").forward(request, response);
                 return;
             }
         } catch (DaoSystemExceptions | NoSuchUserException e) {
