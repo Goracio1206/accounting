@@ -7,16 +7,11 @@ import net.accounting.dao.UserDao;
 import net.accounting.dao.impl.SearchUserDao;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
-/**
- * Created by vitalii.nedzelskyi on 24.05.2016.
- */
 
 public class Main extends HttpServlet {
     private static final String USER_ID_COOKIE = "user_id";
@@ -39,13 +34,12 @@ public class Main extends HttpServlet {
         }
         User aUser = null;
         try {
-            aUser = userDAO.selectUserByID(Integer.valueOf(userID_cookie.getValue())); // Commented because user id returned incorrect after refresh
+            aUser = userDAO.selectUserByID(Integer.valueOf(userID_cookie.getValue()));
         } catch (NoSuchUserException | DaoSystemExceptions e) {
             e.printStackTrace();
         }
         request.setAttribute("user", aUser);
         request.getRequestDispatcher("jsp/user.jsp").forward(request,response);
 
-        response.getWriter().write("bla lba");
     }
 }
