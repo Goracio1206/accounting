@@ -9,9 +9,6 @@ import net.accounting.dao.UserDao;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Created by Admin on 14-Apr-16.
- */
 public class SearchUserDao implements UserDao {
     private Map<Integer, User> user = new ConcurrentHashMap<Integer, User>();
 
