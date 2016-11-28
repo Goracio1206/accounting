@@ -14,10 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Created by vitalii.nedzelskyi on 24.05.2016.
- */
-
 public class Login extends HttpServlet {
     private static final String USER_EMAIL = "email";
     private static final String USER_PASWORD = "password";
@@ -34,8 +30,7 @@ public class Login extends HttpServlet {
         try {
             User user = aUser.selectUser(userEmail, userPassword);
             if(user != null) {
-                Cookie aCookie = new Cookie("user_id",String.valueOf(user.getId()));
-                request.getSession().setAttribute("logged", "true");
+                Cookie aCookie = new Cookie("user_id", String.valueOf(user.getId()));
                 response.addCookie(aCookie);
                 response.sendRedirect("/main.com");
                 //request.getRequestDispatcher("/main.com").forward(request, response);
