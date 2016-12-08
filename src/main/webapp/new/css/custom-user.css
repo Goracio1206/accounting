@@ -1,0 +1,12 @@
+.user-img-profile{
+    margin: 0px 0px 40px -80px;
+    padding: 0;
+    height: 200px;
+    width: 200px;
+    
+}
+
+.user-img-profile:hover {
+    opacity: 0.9;
+}
+
